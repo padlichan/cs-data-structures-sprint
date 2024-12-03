@@ -9,16 +9,16 @@ cars.AddLast("Skoda");
 cars.AddLast("Mercedes");
 cars.AddLast("Nissan");
 cars.AddAfter(cars.Find("Ford"), "Ferrari");
-foreach(string car in cars)
-{
-    Console.WriteLine(car);
-}
+//foreach(string car in cars)
+//{
+//    Console.WriteLine(car);
+//}
 Exercise3.SwapElementPosition(cars, 2, 6);
 Console.WriteLine();
-foreach (string car in cars)
-{
-    Console.WriteLine(car);
-}
+//foreach (string car in cars)
+//{
+//    Console.WriteLine(car);
+//}
 
 
 //Exercise2.PrintFirstAndLast(cars);
@@ -36,3 +36,17 @@ newCars.AddLast(new Car("Ford", "Focus", 2019));
 newCars.AddLast(new Car("Nissan", "Murano", 1988));
 newCars.AddLast(new Car("BMW", "M", 1999));
 //Exercise2.PrintFirstAndLastGeneric(newCars);
+
+var andrea = new Student("1", "Andrea");
+Exercise4.GradeStudent(andrea, 17);
+Console.WriteLine(Exercise4.CheckGrade(andrea)); // should return 17
+
+var andrew = new Student("2", "Andrew");
+Console.WriteLine(Exercise4.CheckGrade(andrew));
+Exercise4.UpdateGrade(andrew, 5);
+Console.WriteLine(Exercise4.CheckGrade(andrew));
+
+Exercise4.UpdateGradeBook(andrew, "English", 2);
+
+
+Console.WriteLine(Exercise4.gradeBook["2"]["English"]);
