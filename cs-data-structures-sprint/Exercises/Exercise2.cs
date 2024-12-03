@@ -10,14 +10,16 @@ namespace cs_data_structures_sprint.Exercises
     {
         public static void PrintFirstAndLast(LinkedList<string> list)
         {
-            // write your code here
+            Console.WriteLine(list.ElementAt(0));
+            Console.WriteLine(list.ElementAt(^1));
         }
 
-        /*
-        public static void PrintFirstAndLast<T>(LinkedList<T> list)
+        
+        public static void PrintFirstAndLastGeneric<T>(LinkedList<T> list)
         {
-            // challenge..?
+            Console.WriteLine(list.ElementAt(0).ToString());
+            Console.WriteLine(list.ElementAt(^1).ToString());
         }
-        */
+        
     }
 }
