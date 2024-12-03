@@ -12,7 +12,16 @@ namespace cs_data_structures_sprint.Exercises
         {
             // Write your code here and replace "" with your result
             // Use a Stack<string> to reverse the string
-            return "";
+            Stack<char> stack = new Stack<char>();
+            
+            foreach(char c in str)
+            {
+                stack.Push(c);
+            }
+            char[] outputChar = stack.ToArray();
+            string output = new string(outputChar);
+
+            return output;
         }
     }
 }

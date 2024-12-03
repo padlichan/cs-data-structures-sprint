@@ -10,13 +10,23 @@ namespace cs_data_structures_sprint.Exercises
     {
         public static void PrintQueue<T>(Queue<T> queue)
         {
-            // write your code here
-            // This method should print the contents of the queue to the console
+            while(queue.Count > 0) 
+            {
+                Console.WriteLine(queue.Dequeue());
+            }
         }
 
         public static void ReverseQueue<T>(Queue<T> queue)
         {
-            // write your code here
+            Stack<T> stack = new Stack<T>();
+            while( queue.Count > 0)
+            {
+                stack.Push(queue.Dequeue());
+            }
+            while(stack.Count > 0)
+            {
+                Console.WriteLine(stack.Pop());
+            }
         }
 
         
