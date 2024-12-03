@@ -44,3 +44,9 @@ playlist.AddSong(modernEscapism.FindSong("Holocene"));
 playlist.AddSong(bonIver.FindSong("Towers"));
 playlist.AddSong(bonIver.FindSong("Beth/Rest"));
 playlist.AddSong(bonIver.FindSong("Mitchcant"));
+
+playlist.PlaySong(2);
+
+UI.playlist = playlist;
+UI.PrintActions();
+UI.PromptForAction();

@@ -9,7 +9,13 @@ namespace cs_data_structures_sprint.Playlist
     public class Playlist
     {
         public LinkedList<Song> PlayListSongs = new();
+        private Song? currentSong = null;
 
+
+        public Song? GetCurrentSong()
+        {
+            return currentSong;
+        }
         public void AddSong(Song? song)
         {
             if(song != null)
@@ -22,6 +28,7 @@ namespace cs_data_structures_sprint.Playlist
             {
                 var song = PlayListSongs.ElementAt(index);
                 Console.WriteLine($"Playing {song.Title} for {song.duration}");
+                currentSong = song;
             }
         }
 
