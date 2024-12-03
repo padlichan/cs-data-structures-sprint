@@ -10,7 +10,15 @@ namespace cs_data_structures_sprint.Exercises
     {
         public static void SwapElementPosition(LinkedList<string> list, int index1, int index2)
         {
-            // Write your code here
+            var newElement1 = list.ElementAt(index1);
+            var newElement2 = list.ElementAt(index2);
+            
+            var newElement1Node = list.Find(newElement1);
+            var newElement2Node = list.Find(newElement2);
+
+            newElement1Node.Value = newElement2;
+            newElement2Node.Value = newElement1;
+
         }
     }
 }

@@ -9,6 +9,17 @@ cars.AddLast("Skoda");
 cars.AddLast("Mercedes");
 cars.AddLast("Nissan");
 cars.AddAfter(cars.Find("Ford"), "Ferrari");
+foreach(string car in cars)
+{
+    Console.WriteLine(car);
+}
+Exercise3.SwapElementPosition(cars, 2, 6);
+Console.WriteLine();
+foreach (string car in cars)
+{
+    Console.WriteLine(car);
+}
+
 
 //Exercise2.PrintFirstAndLast(cars);
 LinkedList<int> numbers = new();
@@ -24,4 +35,4 @@ newCars.AddLast(new Car("Ford", "Mustang", 2003));
 newCars.AddLast(new Car("Ford", "Focus", 2019));
 newCars.AddLast(new Car("Nissan", "Murano", 1988));
 newCars.AddLast(new Car("BMW", "M", 1999));
-Exercise2.PrintFirstAndLastGeneric(newCars);
+//Exercise2.PrintFirstAndLastGeneric(newCars);
