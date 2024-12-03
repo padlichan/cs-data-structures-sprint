@@ -13,7 +13,6 @@ namespace cs_data_structures_sprint.Exercises
             // Write your code here and replace "" with your result
             // Use a Stack<string> to reverse the string
             Stack<char> stack = new Stack<char>();
-            
             foreach(char c in str)
             {
                 stack.Push(c);

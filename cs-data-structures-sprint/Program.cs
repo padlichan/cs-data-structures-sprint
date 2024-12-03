@@ -1,69 +1,46 @@
 ﻿// Console.WriteLine("Your code can go here, if you like");
 using cs_data_structures_sprint.Exercises;
+using cs_data_structures_sprint.Playlist;
 using cs_data_structures_sprint.RequestBenchmark;
 
-LinkedList<string> cars = new LinkedList<string>();
-cars.AddLast("Ford");
-cars.AddLast("Kia");
-cars.AddLast("BMW");
-cars.AddLast("Lexus");
-cars.AddLast("Skoda");
-cars.AddLast("Mercedes");
-cars.AddLast("Nissan");
-cars.AddAfter(cars.Find("Ford"), "Ferrari");
-//foreach(string car in cars)
-//{
-//    Console.WriteLine(car);
-//}
-Exercise3.SwapElementPosition(cars, 2, 6);
-Console.WriteLine();
-//foreach (string car in cars)
-//{
-//    Console.WriteLine(car);
-//}
+List<Album> albums = new List<Album>();
+
+Album modernEscapism = new Album("Modern Escapism", "blanket");
+modernEscapism.AddSong("White Noise", 4.37);
+modernEscapism.AddSong("Romance", 5.22);
+modernEscapism.AddSong("Last days of the Blue Blood Harvest", 5.27);
+modernEscapism.AddSong("Firmament", 3.45);
+modernEscapism.AddSong("The Mighty Deep", 2.39);
+modernEscapism.AddSong("In Awe", 4.00);
+modernEscapism.AddSong("Where the Light Takes Us", 3.51);
+modernEscapism.AddSong("Burial", 4.40);
+modernEscapism.AddSong("Violence", 5.05);
+modernEscapism.AddSong("Silent Ground", 1.35);
+modernEscapism.AddSong("Last Light", 5.22);
+
+albums.Add(modernEscapism);
+
+var bonIver = new Album("Bon Iver", "Bon Iver");
+bonIver.AddSong("Perth", 4.22);
+bonIver.AddSong("Minnesota, WI", 3.52);
+bonIver.AddSong("Holocene", 5.37);
+bonIver.AddSong("Towers", 3.08);
+bonIver.AddSong("Mitchcant", 3.46);
+bonIver.AddSong("Hinnom, TX", 2.45);
+bonIver.AddSong("Wash", 4.59);
+bonIver.AddSong("Calgary", 4.10);
+bonIver.AddSong("Lisbon, OH", 1.33);
+bonIver.AddSong("Beth/Rest", 5.17);
+
+albums.Add(bonIver);
 
 
-//Exercise2.PrintFirstAndLast(cars);
-LinkedList<int> numbers = new();
-numbers.AddLast(22);
-numbers.AddFirst(5);
-numbers.AddLast(66);
-numbers.AddFirst(95);
-//Exercise2.PrintFirstAndLastGeneric(numbers);
-//Exercise1.PrintExesAndOhs(5);
-
-//LinkedList<Car> newCars  = new();
-//newCars.AddLast(new Car("Ford", "Mustang", 2003));
-//newCars.AddLast(new Car("Ford", "Focus", 2019));
-//newCars.AddLast(new Car("Nissan", "Murano", 1988));
-//newCars.AddLast(new Car("BMW", "M", 1999));
-////Exercise2.PrintFirstAndLastGeneric(newCars);
-
-//var andrea = new Student("1", "Andrea");
-//Exercise4.GradeStudent(andrea, 17);
-//Console.WriteLine(Exercise4.CheckGrade(andrea)); // should return 17
-
-//var andrew = new Student("2", "Andrew");
-//Console.WriteLine(Exercise4.CheckGrade(andrew));
-//Exercise4.UpdateGrade(andrew, 5);
-//Console.WriteLine(Exercise4.CheckGrade(andrew));
-
-//Exercise4.UpdateGradeBook(andrew, "English", 2);
-
-
-//Console.WriteLine(Exercise4.gradeBook["2"]["English"]);
-
-//Console.WriteLine(Exercise5.StackReverseWord("C# is wonderful!"));
-int[] nums = [5, 10, 15, 20, 25, 30]; 
-Queue<int> queue = new Queue<int>(nums);
-//Exercise6.PrintQueue(queue);
-
-string[] peopleNames = ["Sam", "Poppy", "Leo", "Lili"];
-Queue<string> people = new Queue<string>(peopleNames);
-
-//Exercise6.ReverseQueue(people);
-
-
-PerformBenchmark.Start("Dictionary", new RequestDictionary(), 100000);
-
-PerformBenchmark.Start("SortedDictionary", new RequestSortedDictionary(), 100000);
+var playlist = new Playlist();
+playlist.AddSong(modernEscapism.FindSong("Where the Light Takes Us"));
+playlist.AddSong(modernEscapism.FindSong("In Awe"));
+playlist.AddSong(modernEscapism.FindSong("Burial"));
+playlist.AddSong(modernEscapism.FindSong("Violence"));
+playlist.AddSong(modernEscapism.FindSong("Holocene"));
+playlist.AddSong(bonIver.FindSong("Towers"));
+playlist.AddSong(bonIver.FindSong("Beth/Rest"));
+playlist.AddSong(bonIver.FindSong("Mitchcant"));
