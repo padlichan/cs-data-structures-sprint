@@ -1,5 +1,7 @@
 ﻿// Console.WriteLine("Your code can go here, if you like");
 using cs_data_structures_sprint.Exercises;
+using cs_data_structures_sprint.RequestBenchmark;
+
 LinkedList<string> cars = new LinkedList<string>();
 cars.AddLast("Ford");
 cars.AddLast("Kia");
@@ -59,4 +61,9 @@ Queue<int> queue = new Queue<int>(nums);
 string[] peopleNames = ["Sam", "Poppy", "Leo", "Lili"];
 Queue<string> people = new Queue<string>(peopleNames);
 
-Exercise6.ReverseQueue(people);
+//Exercise6.ReverseQueue(people);
+
+
+PerformBenchmark.Start("Dictionary", new RequestDictionary(), 100000);
+
+PerformBenchmark.Start("SortedDictionary", new RequestSortedDictionary(), 100000);
