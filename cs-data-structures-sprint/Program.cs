@@ -47,6 +47,36 @@ playlist.AddSong(bonIver.FindSong("Mitchcant"));
 
 playlist.PlaySong(2);
 
-UI.playlist = playlist;
-UI.PrintActions();
-UI.PromptForAction();
+
+//UI.PrintActions();
+//UI.PromptForAction();
+UI ui = new();
+ui.playlist = playlist;
+
+PerformAction(UserAction.PlayPrevious, playlist, ui);
+
+void PerformAction(UserAction action, Playlist playlist, UI ui)
+{
+    switch (action)
+    {
+        case UserAction.PlayNext: playlist.PlayNextSong();
+            break;
+
+        case UserAction.PlayPrevious: playlist.PlayPreviousSong(); 
+            break;
+
+        case UserAction.PlayCurrent: playlist.PlayCurrentSong();
+            break;
+
+        case UserAction.ListAll:
+
+        case UserAction.DeleteCurrentSong:
+
+        case UserAction.Menu:
+
+        case UserAction.Exit:
+
+        default: 
+            break; 
+    }
+}

@@ -1,10 +1,10 @@
 ﻿namespace cs_data_structures_sprint.Playlist
 {
-    public static class UI
+    public class UI
     {
 
-        public static Playlist playlist;
-        public static void PrintActions()
+        public Playlist playlist;
+        public void PrintActions()
         {
             Song? currentSong = playlist.GetCurrentSong();
             if (currentSong != null) Console.WriteLine($"Current song: {currentSong.Title}");
@@ -12,26 +12,26 @@
             Console.WriteLine($"Play next (E), Play previous (Q), Play current (W), List songs (L), Delete current song (D), Menu (M), Exit (X) ");
         }
 
-        public static Action PromptForAction()
+        public UserAction PromptForAction()
         {
             PrintActions();
             char userInput = Console.ReadKey().KeyChar;
             switch (char.ToUpper(userInput))
             {
                 case 'E':
-                    return Action.PlayNext;
+                    return UserAction.PlayNext;
                 case 'Q':
-                    return Action.PlayPrevious;
+                    return UserAction.PlayPrevious;
                 case 'W':
-                    return Action.PlayCurrent;
+                    return UserAction.PlayCurrent;
                 case 'L':
-                    return Action.ListAll;
+                    return UserAction.ListAll;
                 case 'D':
-                    return Action.DeleteCurrentSong;
+                    return UserAction.DeleteCurrentSong;
                 case 'M':
-                    return Action.Menu;
+                    return UserAction.Menu;
                 case 'X':
-                    return Action.Exit;
+                    return UserAction.Exit;
                 default: { Console.WriteLine("\nUnrecognised input.\n"); return PromptForAction(); }
             }
         }
@@ -39,7 +39,7 @@
 
 
 
-    public enum Action
+    public enum UserAction
     {
         PlayNext,
         PlayPrevious,
